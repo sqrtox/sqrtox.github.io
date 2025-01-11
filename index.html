@@ -22,7 +22,11 @@
         img.onload = () => {
           cv.width = img.naturalWidth;
           cv.height = img.naturalHeight;
-          cv.drawImage(img, 0, 0, cv.width, vb.height);
+          cv.drawImage(img, 0, 0, cv.width, cb.height);
+
+          const dataUrl = cv.toDataURL();
+
+          console.log(dataUrl);
         };
 
         document.body.append(cv);
