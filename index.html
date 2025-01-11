@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <script>
+      (async () => {
+        "use strict";
+
+        const IMAGE_URL = "https://jekyllrb-ja.github.io/img/octojekyll.png";
+
+        const img = document.createElement("img");
+
+        img.src = IMAGE_URL;
+
+        document.body.append(img);
+
+        const cv = document.createElement("canvas");
+        const ctx = cv.getContext("2d");
+
+        img.onload = () => {
+          cv.width = img.naturalWidth;
+          cv.height = img.naturalHeight;
+          cv.drawImage(img, 0, 0, cv.width, vb.height);
+        };
+
+        document.body.append(cv);
+      })();
+    </script>
+  </body>
+</html>
