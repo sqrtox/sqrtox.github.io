@@ -22,7 +22,7 @@
         img.onload = () => {
           cv.width = img.naturalWidth;
           cv.height = img.naturalHeight;
-          cv.drawImage(img, 0, 0, cv.width, cb.height);
+          cv.drawImage(img, 0, 0, cv.width, cv.height);
 
           const dataUrl = cv.toDataURL();
 
