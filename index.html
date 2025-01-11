@@ -5,7 +5,7 @@
   </head>
   <body>
     <script>
-      (async () => {
+  (async () => {
         "use strict";
 
         const IMAGE_URL = "https://jekyllrb-ja.github.io/img/octojekyll.png";
@@ -13,6 +13,7 @@
         const img = document.createElement("img");
 
         img.src = IMAGE_URL;
+	img.crossOrigin = "anonymous";
 
         document.body.append(img);
 
@@ -22,9 +23,9 @@
         img.onload = () => {
           cv.width = img.naturalWidth;
           cv.height = img.naturalHeight;
-          cv.drawImage(img, 0, 0, cv.width, cv.height);
+          ctx.drawImage(img, 0, 0, cv.width, cv.height);
 
-          const dataUrl = cv.toDataURL();
+          const dataUrl = ctx.getImageData(0, 0, cv.width, cv.height);
 
           console.log(dataUrl);
         };
